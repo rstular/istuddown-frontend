@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Is TU Delft Down?</title>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.3/css/bulma.min.css">
+
+</head>
+
+<body>
+    <section class="hero is-medium is-info">
+        <div class="hero-body">
+            <div class="container has-text-centered">
+                <p class="title is-1">
+                    Is TU Delft down?
+                </p>
+                <div class="block">
+                    <p class="subtitle is-4">
+                        Check whether TU Delft internet services are available or not.
+                    </p>
+                </div>
+                <p class="subtitle is-6">Last updated: <span id="text-last-updated">N/A</span></p>
+            </div>
+        </div>
+    </section>
+
+    <section class="section">
+        <div class="container" id="tile-container">
+            <div class="tile is-ancestor">
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer level">
+        <div class="level-item has-text-centered">
+            <p>
+                Check out the <a href="/api/v1/docs/">API docs</a>!
+            </p>
+        </div>
+        <div class="level-item has-text-centered">
+            <p>
+                Want another page added? Message me on Discord: <strong>ludisuzuki#7040</strong>
+            </p>
+        </div>
+        <div class="level-item has-text-centered">
+            <p>
+                &copy; <a href="https://github.com/rstular/">rstular</a>, 2021
+            </p>
+        </div>
+    </footer>
+
+    <template id="tile-row">
+        <div class="tile is-ancestor">
+        </div>
+    </template>
+    <template id="tile-cell">
+        <div class="tile is-parent">
+            <article class="tile is-child box notification">
+                <div class="level">
+                    <div class="level-left">
+                        <p class="title level-item">BrightSpace</p>
+                    </div>
+                    <div class="level-right">
+                        <p class="level-item">Ping:&nbsp;<span class="service-ping"></span>&nbsp;ms</p>
+                    </div>
+                </div>
+                <p class="subtitle">Status: <span class="service-status"></span></p>
+                <div class="content">
+                    <p class="service-description">The best platrofm ever introduced.</p>
+                    <a href="http://example.com">BrightSpace</a>
+                </div>
+            </article>
+        </div>
+    </template>
+
+    <script src="main.js"></script>
+</body>
+
+</html>
