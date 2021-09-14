@@ -107,6 +107,8 @@ function fetchApiData() {
                 }
                 tileContainer.appendChild(clonedRow);
             }
+
+            document.getElementById("global-footer").style.display = null;
         })
         .catch((error) => {
             console.error("Error:", error);
