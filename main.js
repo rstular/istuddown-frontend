@@ -40,7 +40,7 @@ function populateElementObject(elementObject, dataObject) {
 
     elementObject.querySelector(".service-description").innerText = dataObject.description;
 
-    elementObject.querySelector(".service-ping").innerText = dataObject.ping.toFixed(1);
+    elementObject.querySelector(".service-ping").innerText = dataObject.ping === -1 ? "N/A" : dataObject.ping.toFixed(1);
 
     elementObject.querySelector(".service-status").innerText = statusIntToString(dataObject.status);
 
@@ -76,7 +76,7 @@ function fetchApiData() {
             }
 
             const tileContainer = document.getElementById("tile-container");
-            for (let i = 0; i < tileElements.length; i+=TILES_PER_ROW) {
+            for (let i = 0; i < tileElements.length; i += TILES_PER_ROW) {
                 const tilesInRow = tileElements.slice(i, i + TILES_PER_ROW);
                 let clonedRow = rowTemplate.content.cloneNode(true);
                 for (const tile of tilesInRow) {
