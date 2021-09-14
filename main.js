@@ -49,8 +49,7 @@ function populateElementObject(elementObject, dataObject) {
     }
 }
 
-document.addEventListener("DOMContentLoaded", fetchApiData);
-
+//document.addEventListener("DOMContentLoaded", fetchApiData);
 
 function fetchApiData() {
     fetch("https://istudelftdown.com/api/v1/healthcheck/latest/")
@@ -114,6 +113,7 @@ function fetchApiData() {
         });
 }
 
+fetchApiData();
 
 /**
  * Function to print date diffs.
