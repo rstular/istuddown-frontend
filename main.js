@@ -67,13 +67,38 @@ function fetchApiData() {
             // Update text on page
             document.getElementById("text-last-updated").innerText = lastUpdatedString;
 
+            // Log worst encountered status - to change Hero
+            let worstStatus = 0;
+
             // Loop through all monitored services
             let tileElements = [];
             for (const service of data.services) {
+
+                if (worstStatus < 1 && service.status === 1) {
+                    worstStatus = 1;
+                } else if (worstStatus < 2 && service.status == 2) {
+                    worstStatus = 2;
+                }
+
                 let clonedCell = cellTemplate.content.cloneNode(true);
                 populateElementObject(clonedCell, service);
                 tileElements.push(clonedCell);
             }
+
+
+            const hero = document.getElementById("hero");
+            const heroStatus = document.getElementById("title-status");
+            if (worstStatus === 0) {
+                hero.classList.replace("is-info", "is-success");
+                heroStatus.innerText = "No :)";
+            } else if (worstStatus === 1) {
+                hero.classList.replace("is-info", "is-warning");
+                heroStatus.innerText = "Not.. yet :|";
+            } else if (worstStatus === 2) {
+                hero.classList.replace("is-info", "is-danger");
+                heroStatus.innerText = "Yes :(";
+            }
+
 
             const tileContainer = document.getElementById("tile-container");
             for (let i = 0; i < tileElements.length; i += TILES_PER_ROW) {
