@@ -53,7 +53,7 @@ document.addEventListener("DOMContentLoaded", fetchApiData);
 
 
 function fetchApiData() {
-    fetch("https://istudelftdown.com/api/v1/latest/")
+    fetch("https://istudelftdown.com/api/v1/healthcheck/latest/")
         .then(response => response.json())
         .then(data => {
             // Get template node
