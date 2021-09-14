@@ -32,7 +32,6 @@ function statusIntToClass(statusInt) {
 }
 
 function populateElementObject(elementObject, dataObject) {
-    console.log(dataObject);
     elementObject.querySelector(".title").innerText = dataObject.display_name;
 
     elementObject.querySelector("a").innerText = dataObject.display_url;
